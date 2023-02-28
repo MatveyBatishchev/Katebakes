@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-fk-product
+      author: MYBatishchev
+      comment: "Связывает внешним ключом таблицу product с discount"
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: product
+            baseColumnNames: discount_id
+            constraintName: fk_product_discount
+            onDelete: CASCADE
+            referencedTableName: discount
+            referencedColumnNames: id

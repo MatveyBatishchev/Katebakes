@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-category-table
+      author: MYBatishchev
+      comment: "Создание таблицы с записями о категориях товаров"
+      changes:
+        - createTable:
+            tableName: category
+            remarks: "Таблица с записями о категориях товаров"
+            columns:
+              - column:
+                  name: id
+                  type: serial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  remarks: "Название категории"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: date
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_at
+                  type: date
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false

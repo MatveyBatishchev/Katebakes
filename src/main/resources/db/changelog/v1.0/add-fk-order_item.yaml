@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-fk-order_item
+      author: MYBatishchev
+      comment: "Связывает внешним ключом таблицу order_item с product и order_details"
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: order_item
+            baseColumnNames: order_id
+            constraintName: fk_order_item_order_details
+            onDelete: CASCADE
+            referencedTableName: order_details
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: order_item
+            baseColumnNames: product_id
+            constraintName: fk_order_item_product
+            onDelete: CASCADE
+            referencedTableName: product
+            referencedColumnNames: id

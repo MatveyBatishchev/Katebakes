@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-fk-category_product
+      author: MYBatishchev
+      comment: "Связывает внешним ключом таблицу category_product с product и category"
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: category_product
+            baseColumnNames: category_id
+            constraintName: fk_category_product_category
+            onDelete: CASCADE
+            referencedTableName: category
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: category_product
+            baseColumnNames: product_id
+            constraintName: fk_category_product_product
+            onDelete: CASCADE
+            referencedTableName: product
+            referencedColumnNames: id

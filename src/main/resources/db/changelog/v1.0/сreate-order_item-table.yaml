@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-order_item-table
+      author: MYBatishchev
+      comment: "Создание таблицы посредника между товаром и заказом"
+      changes:
+        - createTable:
+            tableName: order_item
+            remarks: "Таблица посредник между товаром и заказом"
+            columns:
+              - column:
+                  name: id
+                  type: serial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: product_id
+                  type: int
+                  remarks: "Идентификатор товара"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: order_id
+                  type: int
+                  remarks: "Идентификатор заказа"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: date
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_at
+                  type: date
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false

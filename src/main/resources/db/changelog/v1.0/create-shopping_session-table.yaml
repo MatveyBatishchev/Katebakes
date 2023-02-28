@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-shopping_session-table
+      author: MYBatishchev
+      comment: "Создание таблицы с записями о сессиях покупок"
+      changes:
+        - createTable:
+            tableName: shopping_session
+            remarks: "Таблица с записями о сессиях покупок"
+            columns:
+              - column:
+                  name: id
+                  type: serial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: int
+                  remarks: "Идентификатор пользователя"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total
+                  type: decimal
+                  remarks: "Общая стоимость товаров"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: date
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_at
+                  type: date
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false

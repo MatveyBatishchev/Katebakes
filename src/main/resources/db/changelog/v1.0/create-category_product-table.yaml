@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-category_product-table
+      author: MYBatishchev
+      comment: "Создание таблицы посредника между товаром и его категорией"
+      changes:
+        - createTable:
+            tableName: category_product
+            remarks: "Таблица посредник между товаром и его категорией"
+            columns:
+              - column:
+                  name: category_id
+                  type: int
+                  remarks: "Идентификатор категории"
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: product_id
+                  type: int
+                  remarks: "Идентификатор товара"
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: date
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_at
+                  type: date
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false

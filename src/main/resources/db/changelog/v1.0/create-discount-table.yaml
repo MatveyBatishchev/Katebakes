@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-discount-table
+      author: MYBatishchev
+      comment: "Создание таблицы с записями об акциях"
+      changes:
+        - createTable:
+            tableName: discount
+            remarks: "Таблица с записями об акциях"
+            columns:
+              - column:
+                  name: id
+                  type: serial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  remarks: "Название акции"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
+                  remarks: "Описание акции"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: discount_percent
+                  type: decimal
+                  remarks: "Цифровое значение акции"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: date
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_at
+                  type: date
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
