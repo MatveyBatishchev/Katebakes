@@ -26,15 +26,3 @@ databaseChangeLog:
                   remarks: "Идентификатор заказа"
                   constraints:
                     nullable: false
-              - column:
-                  name: created_at
-                  type: date
-                  defaultValueComputed: now()
-                  constraints:
-                    nullable: false
-              - column:
-                  name: modified_at
-                  type: date
-                  defaultValueComputed: now()
-                  constraints:
-                    nullable: false
