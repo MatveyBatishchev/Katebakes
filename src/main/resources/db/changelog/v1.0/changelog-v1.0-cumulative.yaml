@@ -7,7 +7,7 @@ databaseChangeLog:
       file: create-product-table.yaml
   - include:
       relativeToChangelogFile: true
-      file: create-shopping_session-table.yaml
+      file: create-shopping_cart-table.yaml
   - include:
       relativeToChangelogFile: true
       file: create-cart_item-table.yaml
@@ -43,4 +43,4 @@ databaseChangeLog:
       file: add-fk-product.yaml
   - include:
       relativeToChangelogFile: true
-      file: add-fk-shopping_session.yaml
+      file: add-fk-shopping_cart.yaml

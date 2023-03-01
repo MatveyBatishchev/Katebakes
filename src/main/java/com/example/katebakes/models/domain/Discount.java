@@ -3,6 +3,7 @@ package com.example.katebakes.models.domain;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,6 +31,6 @@ public class Discount {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy="discount", fetch = FetchType.LAZY)
-    private Set<Product> product = new HashSet<>();
+    private Set<Product> products = new HashSet<>();
 
 }

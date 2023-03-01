@@ -3,6 +3,7 @@ package com.example.katebakes.models.domain;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
 import javax.persistence.*;
 
 @Data
@@ -28,7 +29,7 @@ public class CartItem {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="session_id")
-    private ShoppingSession shoppingSession;
+    @JoinColumn(name="cart_id")
+    private ShoppingCart shoppingCart;
 
 }

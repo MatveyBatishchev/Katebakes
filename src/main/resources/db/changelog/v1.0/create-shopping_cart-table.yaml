@@ -1,11 +1,11 @@
 databaseChangeLog:
   - changeSet:
-      id: create-shopping_session-table
+      id: create-shopping_cart-table
       author: MYBatishchev
       comment: "Создание таблицы с записями о сессиях покупок"
       changes:
         - createTable:
-            tableName: shopping_session
+            tableName: shopping_cart
             remarks: "Таблица с записями о сессиях покупок"
             columns:
               - column:

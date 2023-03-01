@@ -2,14 +2,14 @@ databaseChangeLog:
   - changeSet:
       id: add-fk-cart_item
       author: MYBatishchev
-      comment: "Связывает внешним ключом таблицу cart_item с product и shopping_session"
+      comment: "Связывает внешним ключом таблицу cart_item с product и shopping_cart"
       changes:
         - addForeignKeyConstraint:
             baseTableName: cart_item
-            baseColumnNames: session_id
-            constraintName: fk_cart_item_shopping_session
+            baseColumnNames: cart_id
+            constraintName: fk_cart_item_shopping_cart
             onDelete: CASCADE
-            referencedTableName: shopping_session
+            referencedTableName: shopping_cart
             referencedColumnNames: id
         - addForeignKeyConstraint:
             baseTableName: cart_item

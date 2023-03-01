@@ -37,7 +37,7 @@ public class User {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
-    private Set<ShoppingSession> shoppingSessions = new HashSet<>();
+    private Set<ShoppingCart> shoppingCarts = new HashSet<>();
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude

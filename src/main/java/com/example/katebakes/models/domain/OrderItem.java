@@ -3,6 +3,7 @@ package com.example.katebakes.models.domain;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
 import javax.persistence.*;
 
 @Data
